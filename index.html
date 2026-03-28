@@ -3,29 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lê Thảo Anh - Lễ Tốt Nghiệp UEH 2026</title>
+    <title>Thao Anh's Graduation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&family=Lugrasimo&family=Mea+Culpa&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&family=Luckiest+Guy&family=Lugrasimo&family=Mea+Culpa&display=swap" rel="stylesheet">
+    
     <style>
         :root { --ueh-blue: rgb(16 80 79); --ueh-gold: #edb92e; --light-gray: #f3f8f8; --spark-gold: #ffe082; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: linear-gradient(180deg, #dbe9e9 0%, #eef4f4 100%); color: #333; overflow-x: hidden; }
-        
-        header { background: linear-gradient(135deg, rgb(0 83 81) 0%, rgb(0 83 81) 100%); color: white; text-align: center; padding: 50px 20px; border-bottom: 5px solid var(--ueh-gold); }
+        body {
+            font-family: "Chiron GoRound TC", sans-serif;
+            font-optical-sizing: auto;
+            margin: 0;
+            background: linear-gradient(180deg, #1f3453 0%, #1f3453 100%);
+            color: #333;
+            overflow-x: hidden;
+            }
+       
+        header { background: linear-gradient(135deg, none, none 100%); color: white; text-align: center; padding: 50px 20px; }
         .header-icon { width: 120px; height: auto; display: block; margin: 0 auto 14px; }
-        .header-image { width: 100%; max-width: 760px; border-radius: 14px; margin: 20px auto 0; display: block; box-shadow: 0 8px 24px rgb(16 80 79); }
-        .container { max-width: 900px; margin: -30px auto 40px; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .header-image { width: 100%; max-width: 900px; border-radius: 14px; margin: 20px auto 0; display: block; box-shadow: 0 8px 24px rgb(16 80 79); }
+        .container-stack { max-width: 900px; margin: -30px auto 40px; position: relative; }
+        .container-bg {
+            position: absolute;
+            inset: 14px 0 -14px;
+            border-radius: 17px;
+            background: linear-gradient(180deg, #e0f6ff 0%, none 100%);
+            box-shadow: 0 12px 28px rgba(10, 52, 52, 0.18);
+            z-index: 1;
+        }
+        .container { max-width: none; margin: 0; background: #f5efe7; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
         .guest-invite { justify-content: center; margin: 18px 0 0; border-bottom: 0; padding-bottom: 0; color: #fff4c2; font-size: 1.6rem; }
 
         header, .container, footer { position: relative; z-index: 3; }
-
+        .luckiest-guy-regular {
+        font-family: "Luckiest Guy", cursive;
+        font-weight: 400;
+        font-style: normal;
+        }
         .firework-rain { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 2; }
         .firework-rain span {
             position: absolute;
-            top: -20vh;
+            top: 0;
             left: var(--x);
-            width: 2px;
+            width: var(--w, 2px);
             height: 120px;
             opacity: 0;
-            background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255, 236, 153, 0.95), rgba(255,255,255,0));
-            filter: drop-shadow(0 0 8px rgba(255, 223, 111, 0.85));
+            background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255, 240, 160, var(--o, 0.95)), rgba(255,255,255,0));
+            filter: drop-shadow(0 0 var(--blur, 8px) #1f3453);
             transform: rotate(18deg);
             animation: fireworks-fall var(--t) linear infinite;
             animation-delay: var(--d);
@@ -43,13 +70,14 @@
         }
         @keyframes fireworks-fall {
             0% { transform: translate3d(0, -120px, 0) rotate(18deg); opacity: 0; }
-            12% { opacity: 0.95; }
-            100% { transform: translate3d(180px, 120vh, 0) rotate(18deg); opacity: 0; }
+            8% { opacity: var(--o, 0.95); }
+            92% { opacity: var(--o, 0.95); }
+            100% { transform: translate3d(var(--drift, 180px), 120vh, 0) rotate(18deg); opacity: 0; }
         }
         
         h2 { color: var(--ueh-blue); display: flex; align-items: center; gap: 10px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
         .grid-info { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; }
-        .card { background: var(--light-gray); padding: 20px; border-radius: 10px; border-left: 5px solid var(--ueh-gold); }
+        .card { background: var(--light-gray); padding: 20px; border-radius: 10px; background-color: #1f3453; color: #f5efe7;}
         
         /* CSS cho Bản đồ Google Maps */
         .map-container { width: 100%; height: 450px; border-radius: 15px; overflow: hidden; border: 2px solid #ddd; margin: 20px 0; }
@@ -60,7 +88,7 @@
         
         .parking-section { background: #e7f3ff; padding: 20px; border-radius: 10px; }
         .parking-item { margin-bottom: 10px; padding-left: 20px; position: relative; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
-        .parking-item::before { content: "🅿️"; position: absolute; left: -5px; }
+        .parking-item::before { content: "📍"; position: absolute; left: -5px; }
         .parking-item-text { flex: 1; }
         .map-link { display: inline-flex; align-items: center; gap: 5px; background: var(--ueh-blue); color: white; text-decoration: none; padding: 5px 12px; border-radius: 20px; font-size: 0.82em; white-space: nowrap; transition: background 0.2s; }
         .map-link:hover { background: #003070; }
@@ -89,7 +117,9 @@
             header { padding: 36px 14px; }
             .header-icon { width: 84px; margin-bottom: 10px; }
             .header-image { margin-top: 14px; border-radius: 10px; }
-            .container { margin: -18px 12px 24px; padding: 18px; border-radius: 12px; }
+            .container-stack { margin: -18px 12px 24px; }
+            .container-bg { inset: 10px 0 -10px; border-radius: 12px; }
+            .container { padding: 18px; border-radius: 12px; }
             h1 { font-size: 1.65rem !important; line-height: 1.25; }
             h2 { font-size: 1.15rem; }
             .guest-invite { font-size: 1.2rem; margin-top: 12px; }
@@ -111,64 +141,137 @@
             .grid-info { grid-template-columns: 1fr; }
             .map-container { height: 260px; }
             .parking-section { padding: 14px; }
-            .parking-section p { font-size: 0.92rem; line-height: 1.55; margin-bottom: 12px; }
+            .parking-section p { font-size: 0.88rem; line-height: 1.6; margin-bottom: 14px; }
             .parking-item {
-                padding-left: 16px;
-                margin-bottom: 14px;
+                padding-left: 18px;
+                margin-bottom: 16px;
+                flex-direction: column;
                 align-items: flex-start;
-                gap: 10px;
+                gap: 8px;
             }
-            .parking-item-text { font-size: 0.92rem; line-height: 1.5; }
+            .parking-item-text { font-size: 0.86rem; line-height: 1.55; }
             .map-link {
-                font-size: 0.75em;
-                padding: 5px 10px;
-                margin-left: 16px;
+                font-size: 0.74em;
+                padding: 6px 10px;
+                margin-left: 0;
             }
+        }
+        /* Date đẹp */
+        .date-fancy {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin-top: 10px;
+            color: #f5efe7;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .date-col {
+            text-align: center;
+            min-width: 80px;
+        }
+
+        .date-line {
+            border-top: 1px solid #ccc;
+            margin: 6px 0;
+        }
+
+        .date-text {
+            font-size: 18px;
+        }
+
+        .date-big {
+            font-size: 42px;
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        .date-month {
+            font-size: 16px;
         }
     </style>
 </head>
 <body>
 
 <div class="firework-rain" aria-hidden="true">
-    <span style="--x: 3%; --d: 0s; --t: 7.2s;"></span>
-    <span style="--x: 10%; --d: 1.1s; --t: 8.5s;"></span>
-    <span style="--x: 17%; --d: 0.6s; --t: 7.8s;"></span>
-    <span style="--x: 24%; --d: 2.4s; --t: 9.1s;"></span>
-    <span style="--x: 31%; --d: 1.8s; --t: 7.4s;"></span>
-    <span style="--x: 39%; --d: 0.2s; --t: 8.9s;"></span>
-    <span style="--x: 46%; --d: 2.1s; --t: 7.6s;"></span>
-    <span style="--x: 54%; --d: 1.5s; --t: 8.2s;"></span>
-    <span style="--x: 62%; --d: 0.9s; --t: 7.3s;"></span>
-    <span style="--x: 70%; --d: 2.7s; --t: 8.7s;"></span>
-    <span style="--x: 77%; --d: 1.3s; --t: 7.9s;"></span>
-    <span style="--x: 84%; --d: 0.4s; --t: 8.4s;"></span>
-    <span style="--x: 91%; --d: 2.2s; --t: 7.1s;"></span>
-    <span style="--x: 97%; --d: 1.7s; --t: 8.8s;"></span>
+    <span style="--x: 2%; --d: 0s; --t: 6.5s; --w: 1px; --o: 0.8; --blur: 6px; --drift: 150px;"></span>
+    <span style="--x: 5%; --d: 0.3s; --t: 7.8s; --w: 2px; --o: 0.9; --blur: 8px; --drift: 200px;"></span>
+    <span style="--x: 8%; --d: 0.6s; --t: 9.1s; --w: 1.5px; --o: 0.85; --blur: 7px; --drift: 180px;"></span>
+    <span style="--x: 11%; --d: 0.9s; --t: 7.2s; --w: 2px; --o: 0.95; --blur: 9px; --drift: 210px;"></span>
+    <span style="--x: 14%; --d: 1.2s; --t: 8.3s; --w: 1px; --o: 0.8; --blur: 6px; --drift: 160px;"></span>
+    <span style="--x: 17%; --d: 1.5s; --t: 7.6s; --w: 2px; --o: 0.92; --blur: 8px; --drift: 195px;"></span>
+    <span style="--x: 20%; --d: 1.8s; --t: 8.9s; --w: 1.5px; --o: 0.87; --blur: 7px; --drift: 175px;"></span>
+    <span style="--x: 23%; --d: 0.2s; --t: 7.4s; --w: 2px; --o: 0.93; --blur: 8px; --drift: 205px;"></span>
+    <span style="--x: 26%; --d: 2.1s; --t: 8.1s; --w: 1px; --o: 0.82; --blur: 6px; --drift: 165px;"></span>
+    <span style="--x: 29%; --d: 0.5s; --t: 7.9s; --w: 2px; --o: 0.94; --blur: 9px; --drift: 215px;"></span>
+    <span style="--x: 32%; --d: 2.3s; --t: 8.5s; --w: 1.5px; --o: 0.86; --blur: 7px; --drift: 185px;"></span>
+    <span style="--x: 35%; --d: 0.8s; --t: 7.3s; --w: 2px; --o: 0.91; --blur: 8px; --drift: 200px;"></span>
+    <span style="--x: 38%; --d: 1.6s; --t: 8.7s; --w: 1px; --o: 0.81; --blur: 6px; --drift: 170px;"></span>
+    <span style="--x: 41%; --d: 0.1s; --t: 7.5s; --w: 2px; --o: 0.95; --blur: 9px; --drift: 220px;"></span>
+    <span style="--x: 44%; --d: 2.6s; --t: 8.2s; --w: 1.5px; --o: 0.88; --blur: 7px; --drift: 190px;"></span>
+    <span style="--x: 47%; --d: 1.3s; --t: 7.8s; --w: 2px; --o: 0.92; --blur: 8px; --drift: 205px;"></span>
+    <span style="--x: 50%; --d: 2.0s; --t: 8.6s; --w: 1px; --o: 0.83; --blur: 6px; --drift: 175px;"></span>
+    <span style="--x: 53%; --d: 0.4s; --t: 7.4s; --w: 2px; --o: 0.93; --blur: 8px; --drift: 210px;"></span>
+    <span style="--x: 56%; --d: 1.9s; --t: 8.3s; --w: 1.5px; --o: 0.87; --blur: 7px; --drift: 180px;"></span>
+    <span style="--x: 59%; --d: 0.7s; --t: 7.7s; --w: 2px; --o: 0.94; --blur: 9px; --drift: 215px;"></span>
+    <span style="--x: 62%; --d: 2.2s; --t: 8.4s; --w: 1px; --o: 0.84; --blur: 6px; --drift: 170px;"></span>
+    <span style="--x: 65%; --d: 1.1s; --t: 7.9s; --w: 2px; --o: 0.91; --blur: 8px; --drift: 200px;"></span>
+    <span style="--x: 68%; --d: 2.4s; --t: 8.8s; --w: 1.5px; --o: 0.89; --blur: 7px; --drift: 185px;"></span>
+    <span style="--x: 71%; --d: 0.6s; --t: 7.3s; --w: 2px; --o: 0.92; --blur: 8px; --drift: 205px;"></span>
+    <span style="--x: 74%; --d: 1.7s; --t: 8.5s; --w: 1px; --o: 0.82; --blur: 6px; --drift: 165px;"></span>
+    <span style="--x: 77%; --d: 2.5s; --t: 7.6s; --w: 2px; --o: 0.96; --blur: 9px; --drift: 220px;"></span>
+    <span style="--x: 80%; --d: 0.9s; --t: 8.2s; --w: 1.5px; --o: 0.85; --blur: 7px; --drift: 175px;"></span>
+    <span style="--x: 83%; --d: 2.0s; --t: 7.8s; --w: 2px; --o: 0.93; --blur: 8px; --drift: 210px;"></span>
+    <span style="--x: 86%; --d: 1.4s; --t: 8.6s; --w: 1px; --o: 0.81; --blur: 6px; --drift: 170px;"></span>
+    <span style="--x: 89%; --d: 2.7s; --t: 7.4s; --w: 2px; --o: 0.94; --blur: 9px; --drift: 215px;"></span>
+    <span style="--x: 92%; --d: 0.5s; --t: 8.3s; --w: 1.5px; --o: 0.86; --blur: 7px; --drift: 185px;"></span>
+    <span style="--x: 95%; --d: 1.8s; --t: 7.9s; --w: 2px; --o: 0.90; --blur: 8px; --drift: 200px;"></span>
+    <span style="--x: 98%; --d: 2.2s; --t: 8.7s; --w: 1px; --o: 0.83; --blur: 6px; --drift: 175px;"></span>
 </div>
 
 <header>
     
-    <h1 style="margin:0; font-size: 2.5em;">LỄ TỐT NGHIỆP UEH 2026 <img class="header-icon" src="Assets/Image/🎓️.png" alt="Biểu tượng mũ tốt nghiệp"></h1>
-    <h2 id="guest-invite" class="guest-invite" hidden></h2>
+    <h1 style="margin:0; font-size: 4em;" class="luckiest-guy-regular"><img class="header-icon" src="Assets/Image/🎓️.png" alt="Biểu tượng mũ tốt nghiệp">Thao Anh's Graduation</h1>
+    <h2 id="guest-invite" style="font-family: 'Playfair Display', serif;" class="guest-invite" hidden></h2>
     <img class="header-image" src="Assets/Image/anh_le_bg.jpg" alt="Ảnh chúc mừng tốt nghiệp Lê Thảo Anh">
 </header>
 
+<div class="container-stack">
+<div class="container-bg" aria-hidden="true"></div>
 <div class="container">
-    <div class="grid-info">
+    <div class="grid-info" style="text-align: center;">
         <div class="card">
-            <h3>⏰ Thời gian</h3>
-            <p><strong>Ngày:</strong> 11/04/2026 (Dự kiến)</p>
-            <p><strong>Giờ tập trung:</strong> 07:00 AM</p>
-            <p><strong>Giờ có thể tới:</strong> 11:00 AM</p>
+            <div class="date-fancy">
+                <!-- Left -->
+                <div class="date-col">
+                    <div class="date-line"></div>
+                    <div class="date-text">Thứ 7</div>
+                    <div class="date-line"></div>
+                </div>
+
+                <!-- Middle -->
+                <div class="date-col">
+                    <div class="date-big">11</div>
+                    <div class="date-month">Tháng Tư</div>
+                </div>
+
+                <!-- Right -->
+                <div class="date-col">
+                    <div class="date-line"></div>
+                    <div class="date-text">11:00 AM</div>
+                    <div class="date-line"></div>
+                </div>
+            </div>
+
         </div>
-        <div class="card">
-            <h3>📍 Địa điểm</h3>
-            <p>Hội trường A.116 - Cơ sở A</p>
-            <p>59C Nguyễn Đình Chiểu, Quận 3, TP.HCM</p>
+        <div class="card date-col" style="font-family: 'Playfair Display', serif;">
+            <p id="event-hall-value" >ĐẠI HỌC KINH TẾ THÀNH PHỐ HỒ CHÍ MINH (UEH - CƠ SỞ A)</p>
+            <p id="event-address-value"><i>59C Nguyễn Đình Chiểu, Phường Xuân Hòa, TP.HCM</i></p>
         </div>
     </div>
 
-    <h2>🗺️ Bản đồ Google Maps Trực Tuyến</h2>
+    <h2 style="color: #1f3453;">🗺️ Bản đồ Google Maps</h2>
     <div class="map-container">
         <iframe 
             src="https://www.google.com/maps?q=10.7830828,106.6946682&t=k&z=18&output=embed" 
@@ -181,36 +284,44 @@
         <a class="map-open-btn" href="https://www.google.com/maps/place/%C4%90%E1%BA%A1i+h%E1%BB%8Dc+Kinh+t%E1%BA%BF+TP.HCM+(UEH)+-+C%C6%A1+s%E1%BB%9F+A/@10.7817273,106.6928139,762m/data=!3m1!1e3!4m10!1m2!2m1!1zVUVIIFVuaXZlcnNpdHkgQ8ahIHPhu58gQSwgNTlDIE5ndXnhu4VuIMSQw6xuaCBDaGnhu4N1LCBQaMaw4budbmcgVsO1IFRo4buLIFPDoXUsIFF14bqtbiAzLCBUUC5IQ00!3m6!1s0x31752f36c74caa99:0x743c446a2eef20a5!8m2!3d10.7830828!4d106.6946682!15sCmJVRUggVW5pdmVyc2l0eSBDxqEgc-G7nyBBLCA1OUMgTmd1eeG7hW4gxJDDrG5oIENoaeG7g3UsIFBoxrDhu51uZyBWw7UgVGjhu4sgU8OhdSwgUXXhuq1uIDMsIFRQLkhDTSIDiAEBWmAiXnVlaCB1bml2ZXJzaXR5IGPGoSBz4bufIGEgNTljIG5ndXnhu4VuIMSRw6xuaCBjaGnhu4N1IHBoxrDhu51uZyB2w7UgdGjhu4sgc8OhdSBxdeG6rW4gMyB0cCBoY22SARFwdWJsaWNfdW5pdmVyc2l0eZoBJENoZERTVWhOTUc5blMwVkpRMEZuU1VSd2Mxb3pPRGxCUlJBQuABAPoBBAgAEEk!16s%2Fm%2F02pyl3y?hl=vi-VN&entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">Mở Google Maps</a>
     </div>
 
-    <h2>🅿️ Thông tin chỗ gửi xe</h2>
-    <div class="parking-section">
-        <p><i>Lưu ý: Ngày lễ thường rất đông, bạn nên ưu tiên gửi xe ở các điểm lân cận:</i></p>
+    <h2 style="color: #1f3453;">🏍️ Thông tin địa điểm gửi xe</h2>
+    <div class="parking-section" style="background-color: #f5efe7; border: 4px solid #1f3453; border-radius: 25px;">
         <div class="parking-item">
-            <span class="parking-item-text"><strong>Văn phòng Bộ GD&ĐT:</strong> 3 Công trường Quốc Tế, Phường 6, Xuân Hòa, Hồ Chí Minh 70053, Việt Nam.</span>
-            <a class="map-link" href="https://www.google.com/maps/place/B%E1%BB%99+Gi%C3%A1o+d%E1%BB%A5c+v%C3%A0+%C4%90%C3%A0o+t%E1%BA%A1o+-+%C4%90%E1%BA%A1i+di%E1%BB%87n+c%C3%A1c+c%C6%A1+quan+ph%C3%ADa+Nam/@10.7823958,106.6948847,135m/data=!3m1!1e3!4m6!3m5!1s0x31752f36c04600d7:0xdc35bd73db535406!8m2!3d10.7825563!4d106.6951568!16s%2Fg%2F1hc36r6zh?entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">📍 Xem bản đồ</a>
+            <span class="parking-item-text"><strong>Văn phòng Bộ GD&ĐT:</strong> 3 Công trường Quốc Tế, Phường Xuân Hòa, Hồ Chí Minh.</span>
+            <a class="map-link" href="https://www.google.com/maps/place/B%E1%BB%99+Gi%C3%A1o+d%E1%BB%A5c+v%C3%A0+%C4%90%C3%A0o+t%E1%BA%A1o+-+%C4%90%E1%BA%A1i+di%E1%BB%87n+c%C3%A1c+c%C6%A1+quan+ph%C3%ADa+Nam/@10.7823958,106.6948847,135m/data=!3m1!1e3!4m6!3m5!1s0x31752f36c04600d7:0xdc35bd73db535406!8m2!3d10.7825563!4d106.6951568!16s%2Fg%2F1hc36r6zh?entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">Xem bản đồ</a>
         </div>
         <div class="parking-item">
             <span class="parking-item-text"><strong>Vietjet Air, Highland, Phúc Long, Cộng Cafe:</strong> đối diện Hồ Con Rùa.</span>
-            <a class="map-link" href="https://www.google.com/maps/place/H%E1%BB%93+Con+R%C3%B9a/@10.7826071,106.695926,17z/data=!3m1!4b1!4m6!3m5!1s0x31752f36945880c5:0x92b8db9e3e747a70!8m2!3d10.7826071!4d106.695926!16s%2Fg%2F11f3jvmzmj!18m1!1e1?entry=tts&g_ep=EgoyMDI2MDMxOC4xIPu8ASoASAFQAw%3D%3D&skid=9567570c-c6a1-42dc-9287-712abc42d83c" target="_blank" rel="noopener">📍 Xem bản đồ</a>
+            <a class="map-link" href="https://www.google.com/maps/place/H%E1%BB%93+Con+R%C3%B9a/@10.7826071,106.695926,17z/data=!3m1!4b1!4m6!3m5!1s0x31752f36945880c5:0x92b8db9e3e747a70!8m2!3d10.7826071!4d106.695926!16s%2Fg%2F11f3jvmzmj!18m1!1e1?entry=tts&g_ep=EgoyMDI2MDMxOC4xIPu8ASoASAFQAw%3D%3D&skid=9567570c-c6a1-42dc-9287-712abc42d83c" target="_blank" rel="noopener">Xem bản đồ</a>
         </div>
         <div class="parking-item">
-            <span class="parking-item-text"><strong>Nhà Văn hóa Thanh niên:</strong> 21 Phạm Ngọc Thạch, Quận 3, Hồ Chí Minh.</span>
-            <a class="map-link" href="https://www.google.com/maps/place/Nh%C3%A0+V%C4%83n+ho%C3%A1+Thanh+ni%C3%AAn+TP.+H%E1%BB%93+Ch%C3%AD+Minh/@10.7816119,106.6970463,135m/data=!3m1!1e3!4m6!3m5!1s0x31752f3658915da5:0x7d08899395d00274!8m2!3d10.7818098!4d106.6975084!16s%2Fg%2F120mt77m?entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">📍 Xem bản đồ</a>
+            <span class="parking-item-text"><strong>Nhà Văn hóa Thanh niên:</strong> 21 Phạm Ngọc Thạch, Phường Xuân Hòa, Hồ Chí Minh.</span>
+            <a class="map-link" href="https://www.google.com/maps/place/Nh%C3%A0+V%C4%83n+ho%C3%A1+Thanh+ni%C3%AAn+TP.+H%E1%BB%93+Ch%C3%AD+Minh/@10.7816119,106.6970463,135m/data=!3m1!1e3!4m6!3m5!1s0x31752f3658915da5:0x7d08899395d00274!8m2!3d10.7818098!4d106.6975084!16s%2Fg%2F120mt77m?entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">Xem bản đồ</a>
         </div>
         <div class="parking-item">
-            <span class="parking-item-text"><strong>Guta Pasteur:</strong>129 Pasteur, Phường Võ Thị Sáu, Quận 3, Hồ Chí Minh.</span>
-            <a class="map-link" href="https://www.google.com/maps/place/GUTA/@10.7828863,106.6917112,539m/data=!3m1!1e3!4m6!3m5!1s0x31752f00719632ab:0x1d8565bcc9164673!8m2!3d10.7827973!4d106.6929056!16s%2Fg%2F11yx0nt1nm?entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">📍 Xem bản đồ</a>
+            <span class="parking-item-text"><strong>Guta Pasteur:</strong>129 Pasteur, Phường Võ Thị Sáu, Phường Xuân Hòa, Hồ Chí Minh.</span>
+            <a class="map-link" href="https://www.google.com/maps/place/GUTA/@10.7828863,106.6917112,539m/data=!3m1!1e3!4m6!3m5!1s0x31752f00719632ab:0x1d8565bcc9164673!8m2!3d10.7827973!4d106.6929056!16s%2Fg%2F11yx0nt1nm?entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">Xem bản đồ</a>
         </div>
         <div class="parking-item">
-            <span class="parking-item-text"><strong>Coop Mart Nguyễn Đình Chiểu:</strong>168 Nguyễn Đình Chiểu, Phường 6, Quận 3, Hồ Chí Minh.</span>
-            <a class="map-link" href="https://www.google.com/maps/place/Co.opmart+Nguy%E1%BB%85n+%C4%90%C3%ACnh+Chi%E1%BB%83u/@10.7814923,106.6924141,1077m/data=!3m2!1e3!4b1!4m6!3m5!1s0x31752f31200920bd:0x987d7568197ad8ab!8m2!3d10.7814923!4d106.6924141!16s%2Fg%2F1thnl88q!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">📍 Xem bản đồ</a>
+            <span class="parking-item-text"><strong>Coop Mart Nguyễn Đình Chiểu:</strong>168 Nguyễn Đình Chiểu, Phường Xuân Hòa, Hồ Chí Minh.</span>
+            <a class="map-link" href="https://www.google.com/maps/place/Co.opmart+Nguy%E1%BB%85n+%C4%90%C3%ACnh+Chi%E1%BB%83u/@10.7814923,106.6924141,1077m/data=!3m2!1e3!4b1!4m6!3m5!1s0x31752f31200920bd:0x987d7568197ad8ab!8m2!3d10.7814923!4d106.6924141!16s%2Fg%2F1thnl88q!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">Xem bản đồ</a>
         </div>
     </div>
 
     <div style="text-align: center; margin-top: 30px;">
-        <p>📌 <strong>Ghi chú:</strong> Hãy mang theo Thẻ sinh viên và CCCD để làm thủ tục vào hội trường nhé!</p>
+        <p>
+        📌 <strong>Hiii:</strong> Mọi người tới nơi gọi cho em qua số
+        <a style="color: #1f3453;" href="tel:0972391608"><b>0972391608 (Thảo Anh)</b></a> 
+        hoặc 
+        <a style="color: #1f3453;" href="tel:0909888626"><b>0909888626 (Lan Anh)</b></a> , 
+        <br>
+        tụi em ra đón nhé💞
+        </p>
     </div>
-
-    <section class="wish-section">
+    <div style="margin: 50px auto; text-align: center; width: 100%; font-family: 'Playfair Display', serif; border-top: 2px solid #1f3453; padding-top: 22px;">
+        <p style="font-family: 'Playfair Display', serif;"><i>Em rất vui khi mọi người dành thời gian đến tham dự buổi Lễ Tốt nghiệp cùng em. </br>Sự hiện diện của mọi người là niềm vui rất lớn và làm cho ngày hôm ấy trở nên trọn vẹn hơn.</p>
+    </div>
+    <!-- <section class="wish-section">
         <h2>💌 Gửi Lời Chúc Mừng</h2>
         <p>Điền tên và lời chúc.</p>
 
@@ -224,32 +335,31 @@
                 <textarea id="wish-message" class="wish-textarea" placeholder="Viết lời chúc mừng tại đây..." required></textarea>
             </label>
             <div class="wish-actions">
-                <button class="wish-button primary" type="submit" id="wish-submit">Lưu lời chúc</button>
+                <button class="wish-button primary" type="submit" id="wish-submit">Gửi lời chúc</button>
             </div>
         </form>
 
-        <div id="wish-status" class="wish-status">Đang kết nối Google Apps Script...</div>
-        <div id="wish-empty" class="wish-empty">Chưa có lời chúc nào.</div>
-        <div id="wish-list" class="wish-list"></div>
+        <div id="wish-status" class="wish-status">Sẵn sàng gửi lời chúc.</div>
 
-    </section>
+    </section> -->
 </div>
+    </div>
 
 <footer style="text-align: center; color: #777; padding-bottom: 20px;">
-    <p>© 2026 - Bản quyền thuộc về Tân cử nhân UEH - Lê Thảo Anh</p>
+    <p>Thao Anh's Graduation</p>
 </footer>
 
 
 <script>
-    const DEFAULT_PAGE_TITLE = "Lê Thảo Anh - Lễ Tốt Nghiệp UEH 2026";
+    const DEFAULT_PAGE_TITLE = "Thao Anh's Graduation";
     const INVITE_TITLE_SUFFIX = "- Lễ Tốt Nghiệp UEH 2026";
     const guestInvite = document.getElementById("guest-invite");
     const guestName = new URLSearchParams(window.location.search).get("q")?.trim();
 
     if (guestName) {
-        guestInvite.textContent = `Kính mời ${guestName}`;
+        guestInvite.textContent = `Thân mời ${guestName}`;
         guestInvite.hidden = false;
-        document.title = `Lê Thảo Anh mời ${guestName} ${INVITE_TITLE_SUFFIX}`;
+        document.title = `Thảo Anh thân mời ${guestName} ${INVITE_TITLE_SUFFIX}`;
     } else {
         document.title = DEFAULT_PAGE_TITLE;
     }
@@ -262,8 +372,14 @@
         "AKfycbzat0kK7bqBr6L1GI_4Yv5EGv1cflLd4d7A1OE4HYpEEFiexXCkl9_3VEzXHtLzb7_9"
     ];
     const wishForm = document.getElementById("wish-form");
+    const wishSubmitButton = document.getElementById("wish-submit");
     const wishNameInput = document.getElementById("wish-name");
     const wishMessageInput = document.getElementById("wish-message");
+    const eventDateValue = document.getElementById("event-date-value");
+    const eventAssemblyTimeValue = document.getElementById("event-assembly-time-value");
+    const eventArrivalTimeValue = document.getElementById("event-arrival-time-value");
+    const eventHallValue = document.getElementById("event-hall-value");
+    const eventAddressValue = document.getElementById("event-address-value");
     const wishList = document.getElementById("wish-list");
     const wishEmpty = document.getElementById("wish-empty");
     const wishStatus = document.getElementById("wish-status");
@@ -275,6 +391,10 @@
     let wishes = [];
 
     function setWishStatus(message, tone = "") {
+        if (!wishStatus) {
+            return;
+        }
+
         wishStatus.textContent = message;
         wishStatus.className = tone ? `wish-status ${tone}` : "wish-status";
     }
@@ -327,6 +447,44 @@
         }
 
         return [];
+    }
+
+    function parseEventInfoResponse(payload) {
+        const source = payload?.data ?? payload?.event ?? payload;
+
+        if (!source || typeof source !== "object") {
+            return null;
+        }
+
+        return {
+            date: String(source.date ?? source.eventDate ?? "").trim(),
+            assemblyTime: String(source.assemblyTime ?? source.gioTapTrung ?? "").trim(),
+            arrivalTime: String(source.arrivalTime ?? source.gioCoTheToi ?? "").trim(),
+            hall: String(source.hall ?? source.locationName ?? "").trim(),
+            address: String(source.address ?? source.locationAddress ?? "").trim()
+        };
+    }
+
+    function applyEventInfo(eventInfo) {
+        if (!eventInfo) {
+            return;
+        }
+
+        if (eventInfo.date) {
+            eventDateValue.textContent = eventInfo.date;
+        }
+        if (eventInfo.assemblyTime) {
+            eventAssemblyTimeValue.textContent = eventInfo.assemblyTime;
+        }
+        if (eventInfo.arrivalTime) {
+            eventArrivalTimeValue.textContent = eventInfo.arrivalTime;
+        }
+        if (eventInfo.hall) {
+            eventHallValue.textContent = eventInfo.hall;
+        }
+        if (eventInfo.address) {
+            eventAddressValue.textContent = eventInfo.address;
+        }
     }
 
     function resetWishForm() {
@@ -447,6 +605,16 @@
         }
     }
 
+    async function fetchEventInfo() {
+        try {
+            const data = await requestWishApi("eventInfo");
+            const eventInfo = parseEventInfoResponse(data);
+            applyEventInfo(eventInfo);
+        } catch (error) {
+            // Keep default event values if API does not provide event info.
+        }
+    }
+
     async function saveWish() {
         const payload = {
             name: wishNameInput.value.trim(),
@@ -454,9 +622,20 @@
         };
 
         setWishStatus("Đang gửi lời chúc...");
-        await requestWishApi("create", payload);
-        resetWishForm();
-        await fetchWishes();
+        wishSubmitButton.disabled = true;
+        wishSubmitButton.textContent = "Đang gửi...";
+
+        // Let browser render loading state before waiting for API response.
+        await new Promise((resolve) => requestAnimationFrame(resolve));
+
+        try {
+            await requestWishApi("create", payload);
+            resetWishForm();
+            setWishStatus("Gửi lời chúc thành công.", "success");
+        } finally {
+            wishSubmitButton.disabled = false;
+            wishSubmitButton.textContent = "Gửi lời chúc";
+        }
     }
 
     wishForm.addEventListener("submit", async (event) => {
@@ -474,7 +653,8 @@
         };
     });
 
-    fetchWishes();
+    fetchEventInfo();
+    // fetchWishes();
 </script>
 
 
