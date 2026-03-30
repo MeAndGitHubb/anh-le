@@ -310,20 +310,20 @@
 
     <div style="text-align: center; margin-top: 30px;">
         <p>
-        📌 <strong>Hiii:</strong> Mọi người tới nơi gọi cho em qua số
+        📌 <strong>Hiii:</strong> <span class="guest-name-upper">Mọi người</span> tới nơi gọi qua số
         <a style="color: #1f3453;" href="tel:0972391608"><b>0972391608 (Thảo Anh)</b></a> 
         hoặc 
         <a style="color: #1f3453;" href="tel:0909888626"><b>0909888626 (Lan Anh)</b></a> , 
         <br>
-        tụi em ra đón nhé💞
+        em/mình ra đón nhé💞
         </p>
     </div>
     <div style="margin: 50px auto; text-align: center; width: 100%; font-family: 'Playfair Display', serif; border-top: 2px solid #1f3453; padding-top: 22px;">
-        <p style="font-family: 'Playfair Display', serif;"><i>Em rất vui khi mọi người dành thời gian đến tham dự buổi Lễ Tốt nghiệp cùng em. </br>Sự hiện diện của mọi người là niềm vui rất lớn và làm cho ngày hôm ấy trở nên trọn vẹn hơn.</p>
+        <p style="font-family: 'Playfair Display', serif;"><i>Thảo Anh rất vui khi <span class="guest-name-lower">mọi người</span> dành thời gian đến tham dự buổi Lễ Tốt nghiệp cùng Thảo Anh. </br>Sự hiện diện của <span class="guest-name-lower">mọi người</span> là niềm vui rất lớn và làm cho ngày hôm ấy trở nên trọn vẹn hơn.</p>
     </div>
     <!-- <section class="wish-section">
         <h2>💌 Gửi Lời Chúc Mừng</h2>
-        <p>Điền tên và lời chúc.</p>
+        <p><span class="guest-name-upper">Mọi người</span> có muốn gửi lời chúc mừng không?</p>
 
         <form id="wish-form" class="wish-form">
             <label class="wish-label" for="wish-name">
@@ -364,6 +364,18 @@
         document.title = DEFAULT_PAGE_TITLE;
     }
 
+    const guestNameUpperNodes = document.querySelectorAll(".guest-name-upper");
+    const guestNameLowerNodes = document.querySelectorAll(".guest-name-lower");
+
+    if (guestName) {
+        guestNameUpperNodes.forEach((node) => {
+            node.textContent = guestName;
+        });
+        guestNameLowerNodes.forEach((node) => {
+            node.textContent = guestName;
+        });
+    }
+
     const GAS_URL = "https://script.google.com/macros/s/AKfycbxzAFzrRcofTzXUAqQmPwyR8R4gPbynuL44Tm0JVvHpgkesQAjE32FnFXhwW2d4FihM/exec";
     const GAS_KEY = "AKfycbxzAFzrRcofTzXUAqQmPwyR8R4gPbynuL44Tm0JVvHpgkesQAjE32FnFXhwW2d4FihM";
     const GAS_KEY_FALLBACKS = [
@@ -384,7 +396,7 @@
     const wishEmpty = document.getElementById("wish-empty");
     const wishStatus = document.getElementById("wish-status");
 
-    if (guestName) {
+    if (guestName && wishNameInput) {
         wishNameInput.value = guestName;
     }
 
@@ -638,20 +650,22 @@
         }
     }
 
-    wishForm.addEventListener("submit", async (event) => {
-        event.preventDefault();
+    if (wishForm && wishNameInput && wishMessageInput && wishSubmitButton) {
+        wishForm.addEventListener("submit", async (event) => {
+            event.preventDefault();
 
-        if (!wishNameInput.value.trim() || !wishMessageInput.value.trim()) {
-            setWishStatus("Vui lòng nhập đủ tên và lời chúc.", "error");
-            return;
-        }
+            if (!wishNameInput.value.trim() || !wishMessageInput.value.trim()) {
+                setWishStatus("Vui lòng nhập đủ tên và lời chúc.", "error");
+                return;
+            }
 
-        try {
-            await saveWish();
-        } catch (error) {
-            setWishStatus(error.message, "error");
-        };
-    });
+            try {
+                await saveWish();
+            } catch (error) {
+                setWishStatus(error.message, "error");
+            }
+        });
+    }
 
     fetchEventInfo();
     // fetchWishes();
