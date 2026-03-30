@@ -315,7 +315,7 @@
         hoặc 
         <a style="color: #1f3453;" href="tel:0909888626"><b>0909888626 (Lan Anh)</b></a> , 
         <br>
-        em/mình ra đón nhé💞
+        <span class="guest-pronoun">em/mình</span> ra đón nhé💞
         </p>
     </div>
     <div style="margin: 50px auto; text-align: center; width: 100%; font-family: 'Playfair Display', serif; border-top: 2px solid #1f3453; padding-top: 22px;">
@@ -355,6 +355,7 @@
     const INVITE_TITLE_SUFFIX = "- Lễ Tốt Nghiệp UEH 2026";
     const guestInvite = document.getElementById("guest-invite");
     const guestName = new URLSearchParams(window.location.search).get("q")?.trim();
+    const guestPronoun = new URLSearchParams(window.location.search).get("xh")?.trim();
 
     if (guestName) {
         guestInvite.textContent = `Thân mời ${guestName}`;
@@ -366,6 +367,7 @@
 
     const guestNameUpperNodes = document.querySelectorAll(".guest-name-upper");
     const guestNameLowerNodes = document.querySelectorAll(".guest-name-lower");
+    const guestPronounNodes = document.querySelectorAll(".guest-pronoun");
 
     if (guestName) {
         guestNameUpperNodes.forEach((node) => {
@@ -373,6 +375,12 @@
         });
         guestNameLowerNodes.forEach((node) => {
             node.textContent = guestName;
+        });
+    }
+
+    if (guestPronoun) {
+        guestPronounNodes.forEach((node) => {
+            node.textContent = guestPronoun;
         });
     }
 
